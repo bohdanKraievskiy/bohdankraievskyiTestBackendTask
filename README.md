@@ -1,7 +1,7 @@
 # Backend API for Test Task
 
 ## Description
-This is a backend application developed for a test task. The project was created by **Bogdan Krakovskyi** and includes user authentication and post management. JWT token authentication is used to secure the API.
+This is a backend application developed for a test task. The project was created by **Bogdan Kraievskiy** and includes user authentication and post management. JWT token authentication is used to secure the API.
 
 ## Technologies Used
 - **FastAPI** - Web framework for building APIs
