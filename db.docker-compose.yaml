@@ -1,0 +1,38 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: backend-app-db
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - backend-app-network
+    restart: always
+
+  backend-app-redis:
+    container_name: backend-app-redis
+    image: redis:latest
+    ports:
+      - 6383:6379
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - backend-app-data:/var/lib/redis
+    networks:
+      - backend-app-network
+
+volumes:
+  mysql_data:
+    driver: local
+  backend-app-data:
+    driver: local
+
+networks:
+  backend-app-network:
+    driver: bridge

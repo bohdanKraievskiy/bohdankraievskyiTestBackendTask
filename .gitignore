@@ -1,0 +1,28 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.save
+venv/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Miscellaneous
+*.swp
+.DS_Store
+postgres_data
+
+nohup.out
+logs
+src/logs
